@@ -9,4 +9,5 @@
     <string name="errorDivPorCero">No es posible la división entre cero!</string>
     <string name="alertTituloEliminarRegistro">Eliminar registro</string>
     <string name="alertPreguntaEliminarRegistro">¿Está seguro que desea eliminar este registro?</string>
+    <string name="errorValidaNumero">Debe ingresar solo números!</string>
 </resources>

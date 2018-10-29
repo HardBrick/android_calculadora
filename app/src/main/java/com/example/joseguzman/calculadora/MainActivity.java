@@ -83,15 +83,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Double uno=null,dos=null;
+                boolean isDivPorCero = false;
                 try{
                     uno = Double.parseDouble(etNumero1.getText().toString());
                 }catch (Exception e){
-                    etNumero1.setError("Debe ingresar solo números!");
+                    etNumero1.setError(getResources().getString(R.string.errorValidaNumero));
                 }
                 try{
                     dos = Double.parseDouble(etNumero2.getText().toString());
                 }catch (Exception e){
-                    etNumero2.setError("Debe ingresar solo números!");
+                    etNumero2.setError(getResources().getString(R.string.errorValidaNumero));
                 }
 
                 if(uno != null && dos != null){
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                         case "/":
                             if(dos==0){
                                 etNumero2.setError(getResources().getString(R.string.errorDivPorCero));
+                                isDivPorCero = true;
                             }else{
                                 tvResultado.setText(calc.Dividir(uno,dos)+"");
                             }
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                             tvResultado.setText(calc.Potenciar(uno,dos)+"");
                             break;
                     }
-                    if(swGuardar.isChecked()){
+                    if(!isDivPorCero && swGuardar.isChecked()){
                         log.add(uno + " " + tvOperacion.getText().toString() + " " + dos + " = " + tvResultado.getText().toString() );
                         adapter = new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, log);
                         lvLog.setAdapter(adapter);
