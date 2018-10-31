@@ -69,11 +69,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 rdSeleccionado = (RadioButton) findViewById(checkedId);
-                String r = getResources().getString(R.string.etNumero2);
                 if(rdSeleccionado.getText().toString().equals("Pot")){
-                    r = "Ingrese exponente";
+                    etNumero1.setHint(getResources().getString(R.string.etNumero1HintPot));
+                    etNumero2.setHint(getResources().getString(R.string.etNumero2HintPot));
                 }else{
-                    r= "Ingrese número";
+                    etNumero1.setHint(getResources().getString(R.string.etNumero1Hint));
+                    etNumero2.setHint(getResources().getString(R.string.etNumero2Hint));
                 }
                 tvOperacion.setText(rdSeleccionado.getText().toString());
             }
@@ -148,6 +149,16 @@ public class MainActivity extends AppCompatActivity {
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
                 return false;
+            }
+        });
+
+
+        btnLimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etNumero1.setText("");
+                etNumero2.setText("");
+                tvResultado.setText("0");
             }
         });
 

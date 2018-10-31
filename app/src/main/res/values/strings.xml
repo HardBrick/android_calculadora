@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Calculadora</string>
-    <string name="etNumero1">Ingrese número</string>
-    <string name="etNumero2">Ingrese número</string>
+    <string name="etNumero1Hint">Ingrese número</string>
+    <string name="etNumero1HintPot">Ingrese base</string>
+    <string name="etNumero2Hint">Ingrese número</string>
+    <string name="etNumero2HintPot">Ingrese exponente</string>
     <string name="swGuardar">Guardar</string>
     <string name="btnLimpiar">Limpiar</string>
     <string name="btnEjecutar">Ejecutar</string>
-    <string name="tvResultado">resultado</string>
+    <string name="tvResultado"></string>
     <string name="errorDivPorCero">No es posible la división entre cero!</string>
     <string name="alertTituloEliminarRegistro">Eliminar registro</string>
     <string name="alertPreguntaEliminarRegistro">¿Está seguro que desea eliminar este registro?</string>
